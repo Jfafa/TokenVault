@@ -27,7 +27,7 @@ async function AddCreditCard(call, callback) {
     const id = ULID.ulid();
     const encrypted = aes256.encrypt(process.env.SECRET, call.request.pan);
 
-    await TokenVaultModel.put({ id: id, ecrypted: encrypted, hashed: hashed });
+    await TokenVaultModel.put({ id: id, encrypted: encrypted, hashed: hashed });
 
     callback(null, { message: "Card was added" });
   }

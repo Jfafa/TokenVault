@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package token_vault;
+
+import "card.proto";
+
+service TokenVault {
+  rpc AddCreditCard (addCardRequest) returns (AddCreditCardReply) {}
+  rpc GetCreditCard (getCardRequest) returns (AddCreditCardReply) {}
+}
+
+
+
+
+message addCardRequest {
+    string pan = 1;
+}
+
+
+message getCardRequest {
+    string id = 1;
+}
+
+message AddCreditCardReply {
+    string message = 1;
+    Card card = 2;
+}
+  

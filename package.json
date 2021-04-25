@@ -1,0 +1,25 @@
+{
+  "name": "task",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:server": "SALT='testsalt' SECRET='testsecretkey' ts-node server.ts",
+    "start:client": "ts-node client.ts",
+    "deploy:tables": "aws cloudformation deploy --template ./table.json --stack-name DynamoDb-tables"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.2.4"
+  },
+  "dependencies": {
+    "@grpc/grpc-js": "^1.2.12",
+    "@grpc/proto-loader": "^0.6.1",
+    "aes256": "^1.1.0",
+    "aws-sdk": "^2.892.0",
+    "js-sha512": "^0.8.0",
+    "minimist": "^1.2.5",
+    "ulid": "^2.3.0"
+  }
+}
